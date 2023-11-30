@@ -1,6 +1,6 @@
 package demo.workwear.model.modelEnum;
 
-public enum SizeClothing {
+public enum WorkWearSize {
 
    S_48_50,
    S_44_46,
