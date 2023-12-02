@@ -6,10 +6,12 @@ import demo.workwear.model.modelEnum.WorkWearSize;
 import demo.workwear.model.modelEnum.WorkWearType;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
 @Table(name = "workWear")
+@NoArgsConstructor
 public class WorkWear {
 
     @Id

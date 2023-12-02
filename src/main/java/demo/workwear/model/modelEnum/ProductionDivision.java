@@ -43,7 +43,13 @@ public enum ProductionDivision {
         this.value = value;
     }
 
-   /* public ProductionDivision getType(String value) {
+    @Override
+    public String toString() {
+        return "ProductionDivision{" +
+                "value='" + value + '\'' +
+                '}';
+    }
+/* public ProductionDivision getType(String value) {
         if (value == null) return NONE;
         for (ProductionDivision c : values()) {
             if (c.value.equalsIgnoreCase(value))

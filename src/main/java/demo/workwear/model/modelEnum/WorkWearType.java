@@ -1,13 +1,23 @@
 package demo.workwear.model.modelEnum;
 
+import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.Getter;
+
+@Getter
 public enum WorkWearType {
 
-    TECHNOLOGICAL_CLOTHING,
-    WORKER_SUIT,
-    WELDER_SUIT,
-    WORK_COAT,
-    WINTER_SUIT,
-    OTHER,
-    SUIT_CLEAN_ROOMS
+    TECHNOLOGICAL_CLOTHING("Костюм технологический"),
+    WORKER_SUIT("Костюм рабочего"),
+    WELDER_SUIT("Костюм сварщика"),
+    SMOCK("Халат"),
+    WINTER_SUIT("Костюм зимний"),
+    OTHER("Прочее"),
+    SUIT_CLEAN_ROOMS("Костюм чистой комнаты");
 
+    @JsonValue
+    private final String value;
+
+    WorkWearType(String value) {
+        this.value = value;
+    }
 }

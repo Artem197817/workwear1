@@ -1,6 +1,7 @@
 package demo.workwear.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import demo.workwear.model.modelEnum.Company;
 import demo.workwear.model.modelEnum.ProductionDivision;
 import jakarta.persistence.Entity;
@@ -16,6 +17,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "employees")
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Employee {
 
     @Id
@@ -28,15 +30,4 @@ public class Employee {
     private Company company;
     private String specialization;
 
-    public Employee(String firstName, String lastName, String patronymic,
-                    ProductionDivision productionDivision, Company company,
-                    String specialization) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
-        this.productionDivision = productionDivision;
-        this.company = company;
-        this.specialization = specialization;
-    }
 }
