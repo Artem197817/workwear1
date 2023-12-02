@@ -1,8 +1,6 @@
 package demo.workwear;
 
-import demo.workwear.model.Employee;
-import demo.workwear.model.modelEnum.Company;
-import demo.workwear.model.modelEnum.ProductionDivision;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
