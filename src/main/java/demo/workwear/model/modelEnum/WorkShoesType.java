@@ -9,7 +9,7 @@ public enum WorkShoesType {
     CLOGS("Сабо"),
     BOOTS("Ботинки/Сапоги"),
     HALF_BOOTS("Полуботинки"),
-    WINTER_SHOES("Обувь зимняя"),
+    WINTER_SHOES("Зимняя обувь"),
     OTHER("Другое");
 
     @JsonValue

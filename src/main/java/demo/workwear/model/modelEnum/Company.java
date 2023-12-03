@@ -15,14 +15,7 @@ public enum Company {
         this.value = value;
     }
 
-    @Override
-    public String toString() {
-        return "Company{" +
-                "value='" + value + '\'' +
-                '}';
-    }
-
-    /*
+/*
 
     public Company getType (String value){
         if (value == null) return NONE;
