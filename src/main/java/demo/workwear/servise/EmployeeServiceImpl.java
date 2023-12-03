@@ -51,4 +51,8 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employeeRepository.findAllEmployeeByProductionDivision(productionDivision);
     }
 
+    @Override
+    public List<Employee> findAllEmployeeByLastName(String lastName) {
+        return employeeRepository.findAllEmployeeByLastName(lastName);
+    }
 }

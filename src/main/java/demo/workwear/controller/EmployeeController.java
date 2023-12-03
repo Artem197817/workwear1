@@ -1,6 +1,8 @@
 package demo.workwear.controller;
 
 import demo.workwear.model.Employee;
+import demo.workwear.model.modelEnum.Company;
+import demo.workwear.model.modelEnum.ProductionDivision;
 import demo.workwear.servise.EmployeeService;
 import lombok.Data;
 
@@ -36,9 +38,19 @@ public class EmployeeController {
         return employeeService.updateEmployee(employee);
     }
 
-    @DeleteMapping("delete_student/{email}")
-    public void deleteStudent(@PathVariable long id) {
+    @DeleteMapping("/delete_employee/{id}")
+    public void deleteEmployee(@PathVariable long id) {
         employeeService.deleteEmployee(id);
     }
-    
+
+    @GetMapping("/pd/{productionDivision}")
+    public List<Employee> findAllEmployeeByProductionDivision (@PathVariable ProductionDivision productionDivision) {
+        return employeeService.findAllEmployeeByProductionDivision(productionDivision);
+    }
+
+    @GetMapping("/last_name/{lastName}")
+    public List<Employee> findAllEmployeeByLastName(@PathVariable String lastName){
+        return employeeService.findAllEmployeeByLastName(lastName);
+    }
+
 }

@@ -18,4 +18,6 @@ public interface EmployeeService {
     void deleteEmployee(Long id);
 
     List<Employee> findAllEmployeeByProductionDivision(ProductionDivision productionDivision);
+
+    List<Employee> findAllEmployeeByLastName (String lastName);
 }
