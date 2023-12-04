@@ -1,7 +1,6 @@
 package demo.workwear.controller;
 
 import demo.workwear.model.Employee;
-import demo.workwear.model.modelEnum.Company;
 import demo.workwear.model.modelEnum.ProductionDivision;
 import demo.workwear.servise.EmployeeService;
 import lombok.Data;
