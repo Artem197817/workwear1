@@ -2,22 +2,33 @@ package demo.workwear.model;
 
 import demo.workwear.model.modelEnum.WorkShoesType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
-import org.springframework.validation.annotation.Validated;
+
 
 @Entity
 @Data
 @Table(name = "workShoes")
 public class WorkShoes {
 
+    public static final int ISSUE = -1;
+    public static final int NOT_ISSUE = 1;
+
     @Id
     @GeneratedValue
     private Long id;
-    @Size(min = 34, max = 48)
+    private String modelWorkShoes;
+
     private int workShoesSize;
     private WorkShoesType workShoesType;
-    @Column(name = "shoes_issue")
-    boolean isIssueShoes = false;
+    // @NotBlank
+    private int workShoesStatus;
 
+    public WorkShoes(String modelWorkShoes, String workShoesSize, WorkShoesType workShoesType) {
+        this.modelWorkShoes = modelWorkShoes;
+        this.workShoesSize = Integer.parseInt(workShoesSize);
+        this.workShoesType = workShoesType;
+        this.workShoesStatus = NOT_ISSUE;
+    }
 }

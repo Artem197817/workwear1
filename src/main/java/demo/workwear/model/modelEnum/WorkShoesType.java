@@ -1,6 +1,7 @@
 package demo.workwear.model.modelEnum;
 
 import com.fasterxml.jackson.annotation.JsonValue;
+import lombok.Data;
 import lombok.Getter;
 
 @Getter
@@ -18,4 +19,5 @@ public enum WorkShoesType {
     WorkShoesType(String value) {
         this.value = value;
     }
+
 }
