@@ -5,11 +5,13 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
 @Data
 @Table(name = "workShoes")
+@NoArgsConstructor
 public class WorkShoes {
 
     public static final int ISSUE = -1;
@@ -23,7 +25,7 @@ public class WorkShoes {
     private int workShoesSize;
     private WorkShoesType workShoesType;
     // @NotBlank
-    private int workShoesStatus;
+    private int workShoesStatus = NOT_ISSUE;
 
     public WorkShoes(String modelWorkShoes, String workShoesSize, WorkShoesType workShoesType) {
         this.modelWorkShoes = modelWorkShoes;
