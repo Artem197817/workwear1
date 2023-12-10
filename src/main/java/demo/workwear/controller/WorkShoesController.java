@@ -46,7 +46,7 @@ public class WorkShoesController {
     }
 
     @GetMapping("work_shoes_type/{workShoesType}")
-    public List<WorkShoes> findAllWorkShoesByWorkShoesType(WorkShoesType workShoesType) {
+    public List<WorkShoes> findAllWorkShoesByWorkShoesType(@PathVariable WorkShoesType workShoesType) {
         return workShoesService.findAllWorkShoesByWorkShoesType(workShoesType);
     }
 }
