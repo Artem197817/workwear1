@@ -1,6 +1,5 @@
 package demo.workwear.servise;
 
-import demo.workwear.model.Employee;
 import demo.workwear.model.WorkShoes;
 import demo.workwear.model.modelEnum.WorkShoesType;
 

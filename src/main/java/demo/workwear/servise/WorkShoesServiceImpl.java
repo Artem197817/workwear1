@@ -15,7 +15,7 @@ import java.util.Optional;
 @AllArgsConstructor
 public class WorkShoesServiceImpl implements WorkShoesService{
 
-    WorkShoesRepository workShoesRepository;
+   private final WorkShoesRepository workShoesRepository;
 
     @Override
     public List<WorkShoes> findAllWorkShoes() {

@@ -2,7 +2,6 @@ package demo.workwear.repository;
 
 import demo.workwear.model.WorkShoes;
 import demo.workwear.model.modelEnum.WorkShoesType;
-import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
