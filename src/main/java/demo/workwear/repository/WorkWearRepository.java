@@ -3,6 +3,7 @@ package demo.workwear.repository;
 
 
 import demo.workwear.model.WorkWear;
+import demo.workwear.model.modelEnum.WorkWearHeight;
 import demo.workwear.model.modelEnum.WorkWearSize;
 import demo.workwear.model.modelEnum.WorkWearType;
 import org.springframework.data.jpa.repository.JpaRepository;
