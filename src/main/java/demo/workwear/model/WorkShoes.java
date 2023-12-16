@@ -2,8 +2,6 @@ package demo.workwear.model;
 
 import demo.workwear.model.modelEnum.WorkShoesType;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -24,13 +22,13 @@ public class WorkShoes {
 
     private int workShoesSize;
     private WorkShoesType workShoesType;
-    // @NotBlank
+
     private int workShoesStatus = NOT_ISSUE;
 
     public WorkShoes(String modelWorkShoes, String workShoesSize, WorkShoesType workShoesType) {
         this.modelWorkShoes = modelWorkShoes;
         this.workShoesSize = Integer.parseInt(workShoesSize);
         this.workShoesType = workShoesType;
-        this.workShoesStatus = NOT_ISSUE;
+
     }
 }
