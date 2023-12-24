@@ -6,6 +6,8 @@ import jakarta.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 @Table(name = "shoes_issued")
@@ -15,4 +17,7 @@ public class WorkShoesIssued {
     private Long employeeId;
     @Id
     private Long workShoes;
+    private LocalDate replacementDate;
+    private LocalDate dateIssued = LocalDate.now();
+
 }

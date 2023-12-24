@@ -1,9 +1,7 @@
 package demo.workwear.controller;
 
-import demo.workwear.model.WorkShoes;
 import demo.workwear.model.WorkShoesIssued;
 import demo.workwear.servise.WorkShoesIssuedService;
-import demo.workwear.servise.WorkShoesService;
 import lombok.Data;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,10 +10,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/work_shoes_issued")
 @Data
-public class WorkShoesIssuedController{
+public class WorkShoesIssuedController {
 
     private final WorkShoesIssuedService workShoesIssuedService;
-    private final WorkShoesService workShoesService;
 
     @GetMapping("work_shoes_issued_all")
     public List<WorkShoesIssued> findAllWorkShoesIssued() {
@@ -23,9 +20,8 @@ public class WorkShoesIssuedController{
     }
 
     @PostMapping("save_work_shoes_issued/{workShoesIssued}")
-    public String saveWorkShoesIssued (@PathVariable WorkShoesIssued workShoesIssued) {
-      workShoesService.findById(workShoesIssued.getWorkShoes()).setWorkShoesStatus(WorkShoes.ISSUE);
-      workShoesIssuedService.saveWorkShoesIssued(workShoesIssued);
+    public String saveWorkShoesIssued(@PathVariable WorkShoesIssued workShoesIssued) {
+        workShoesIssuedService.saveWorkShoesIssued(workShoesIssued);
         return "WorkShoesIssued save";
     }
 
@@ -34,18 +30,23 @@ public class WorkShoesIssuedController{
         return workShoesIssuedService.findById(id);
     }
 
-   @PutMapping("work_shoes_issued_update/{workShoesIssued}")
-    public WorkShoesIssued updateWorkShoesIssued(WorkShoesIssued workShoesIssued) {
+    @PutMapping("work_shoes_issued_update/{workShoesIssued}")
+    public WorkShoesIssued updateWorkShoesIssued(@PathVariable WorkShoesIssued workShoesIssued) {
         return null;
     }
 
     @DeleteMapping("delete_work_shoes_issued/{id}")
-    public void deleteWorkShoesIssued(Long id) {
-        workShoesService.deleteWorkShoes(workShoesService.findById(id).getId());
+    public void deleteWorkShoesIssued(@PathVariable Long id) {
         workShoesIssuedService.deleteWorkShoesIssued(id);
     }
+
     @GetMapping("work_shoes_issued_by_id_employee/{id}")
-    public List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(Long id) {
+    public List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(@PathVariable Long id) {
         return workShoesIssuedService.findWorkShoesIssuedByEmployeeID(id);
+    }
+
+    @GetMapping("work_shoes_to_be_replaced")
+    public List<WorkShoesIssued> findWorkShoesToBeReplaced() {
+        return workShoesIssuedService.findWorkShoesToBeReplaced();
     }
 }

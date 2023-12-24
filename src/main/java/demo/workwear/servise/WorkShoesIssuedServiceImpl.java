@@ -1,11 +1,13 @@
 package demo.workwear.servise;
 
+import demo.workwear.model.WorkShoes;
 import demo.workwear.model.WorkShoesIssued;
 import demo.workwear.repository.WorkShoesIssuedRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,16 +16,18 @@ import java.util.Optional;
 @AllArgsConstructor
 public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
 
-    WorkShoesIssuedRepository workShoesIssuedRepository;
+    private final WorkShoesIssuedRepository workShoesIssuedRepository;
+    private final WorkShoesService workShoesService;
 
     @Override
-    public List<WorkShoesIssued> findAllWorkShoesIssued (){
-     return workShoesIssuedRepository.findAll();
+    public List<WorkShoesIssued> findAllWorkShoesIssued() {
+        return workShoesIssuedRepository.findAll();
     }
 
     @Override
     @Transactional
     public WorkShoesIssued saveWorkShoesIssued(WorkShoesIssued workShoesIssued) {
+        workShoesService.findById(workShoesIssued.getWorkShoes()).setWorkShoesStatus(WorkShoes.ISSUE);
         return workShoesIssuedRepository.save(workShoesIssued);
     }
 
@@ -41,12 +45,20 @@ public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
 
     @Override
     public void deleteWorkShoesIssued(Long id) {
+        workShoesService.deleteWorkShoes(workShoesService.findById(id).getId());
         workShoesIssuedRepository.deleteById(id);
     }
-
 
     @Override
     public List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(Long id) {
         return workShoesIssuedRepository.findWorkShoesIssuedByEmployeeID(id);
+    }
+
+    @Override
+    public List<WorkShoesIssued> findWorkShoesToBeReplaced() {
+        LocalDate localDateControl = LocalDate.now().plusMonths(1);
+        return workShoesIssuedRepository.findAll().stream().
+                filter(workWearIssued -> workWearIssued.getReplacementDate().isBefore(localDateControl))
+                .toList();
     }
 }

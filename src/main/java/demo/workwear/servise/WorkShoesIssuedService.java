@@ -18,4 +18,6 @@ public interface WorkShoesIssuedService {
     void deleteWorkShoesIssued(Long id);
 
     List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID (Long id);
+
+    List<WorkShoesIssued> findWorkShoesToBeReplaced ();
 }
