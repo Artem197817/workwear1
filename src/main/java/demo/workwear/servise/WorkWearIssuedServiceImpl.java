@@ -14,7 +14,7 @@ import java.util.Optional;
 @Service
 @Transactional(readOnly = true)
 @AllArgsConstructor
-public class WorkWearIssuedServiceImpl implements WorkWearIssuedService{
+public class WorkWearIssuedServiceImpl implements WorkWearIssuedService {
 
     private final WorkWearIssuedRepository workWearIssuedRepository;
     private final WorkWearService workWearService;
@@ -26,7 +26,7 @@ public class WorkWearIssuedServiceImpl implements WorkWearIssuedService{
 
     @Override
     public WorkWearIssued findWorkWearIssuedById(Long id) {
-        Optional<WorkWearIssued> workWearIssued= workWearIssuedRepository.findById(id);
+        Optional<WorkWearIssued> workWearIssued = workWearIssuedRepository.findById(id);
         return workWearIssued.orElse(null);
     }
 
@@ -52,7 +52,7 @@ public class WorkWearIssuedServiceImpl implements WorkWearIssuedService{
 
     @Override
     public List<WorkWearIssued> findWorkWearIssuedByEmployeeId(Long id) {
-       return workWearIssuedRepository.findWorkWearIssuedByEmployeeId(id);
+        return workWearIssuedRepository.findWorkWearIssuedByEmployeeId(id);
     }
 
     @Override

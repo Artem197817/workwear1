@@ -7,7 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,15 +33,4 @@ public class Employee {
     @NotBlank
     private String specialization;
 
-    public Employee(String firstName, String lastName, String patronymic,
-                    ProductionDivision productionDivision, Company company,
-                    String specialization) {
-
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.patronymic = patronymic;
-        this.productionDivision = productionDivision;
-        this.company = company;
-        this.specialization = specialization;
-    }
 }

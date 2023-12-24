@@ -1,7 +1,6 @@
 package demo.workwear.servise;
 
 import demo.workwear.model.WorkWear;
-import demo.workwear.model.modelEnum.WorkWearHeight;
 import demo.workwear.model.modelEnum.WorkWearSize;
 import demo.workwear.model.modelEnum.WorkWearType;
 
@@ -27,8 +26,8 @@ public class WorkWearServiceImpl implements WorkWearService{
 
     @Override
     @Transactional
-    public WorkWear saveWorkWear(WorkWear workWear) {
-        return workWearRepository.save(workWear);
+    public void saveWorkWear(WorkWear workWear) {
+        workWearRepository.save(workWear);
     }
     @Override
     @Transactional

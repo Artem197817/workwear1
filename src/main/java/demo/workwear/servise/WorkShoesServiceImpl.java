@@ -24,8 +24,8 @@ public class WorkShoesServiceImpl implements WorkShoesService{
 
     @Override
     @Transactional
-    public WorkShoes saveWorkShoes(WorkShoes workShoes) {
-        return workShoesRepository.save(workShoes);
+    public void saveWorkShoes(WorkShoes workShoes) {
+        workShoesRepository.save(workShoes);
     }
 
     @Override

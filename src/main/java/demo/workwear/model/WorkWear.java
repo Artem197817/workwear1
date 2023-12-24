@@ -25,6 +25,4 @@ public class WorkWear {
     private int WorkWearStatus = NOT_ISSUE;
 
 
-
-
 }

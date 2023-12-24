@@ -18,7 +18,7 @@ public class WorkShoesTotalController {
 
     private final WorkShoesTotalService workShoesTotalService;
 
-   @GetMapping("/work_shoes_total_type/{workShoesType}")
+    @GetMapping("/work_shoes_total_type/{workShoesType}")
     public List<WorkShoesTotal> findWorkShoesByTypeSortedNumber(@PathVariable WorkShoesType workShoesType) {
         return workShoesTotalService.findWorkShoesByTypeSortedNumber(workShoesType);
     }

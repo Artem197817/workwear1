@@ -9,10 +9,9 @@ import java.util.List;
 public interface WorkShoesTotalService {
 
 
+    List<WorkShoesTotal> findWorkShoesByTypeSortedNumber(WorkShoesType workShoesType);
 
-    List<WorkShoesTotal> findWorkShoesByTypeSortedNumber (WorkShoesType workShoesType);
-
-    List<WorkShoesTotal> findWorkShoesBySizeSortedNumber (Integer size);
+    List<WorkShoesTotal> findWorkShoesBySizeSortedNumber(Integer size);
 
     List<WorkShoesTotal> findAllWorkShoesSortedNumber();
 }

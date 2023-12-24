@@ -1,7 +1,6 @@
 package demo.workwear.servise;
 
 import demo.workwear.model.WorkWear;
-import demo.workwear.model.modelEnum.WorkWearHeight;
 import demo.workwear.model.modelEnum.WorkWearSize;
 import demo.workwear.model.modelEnum.WorkWearType;
 
@@ -11,18 +10,19 @@ public interface WorkWearService {
 
     List<WorkWear> findAllWorkWear();
 
-    WorkWear saveWorkWear (WorkWear workWear);
+    void saveWorkWear(WorkWear workWear);
 
-    WorkWear findByID (Long id);
+    WorkWear findByID(Long id);
 
-    WorkWear updateWorkWear (WorkWear workWear);
+    WorkWear updateWorkWear(WorkWear workWear);
 
-    void deleteWorkWear (Long id);
+    void deleteWorkWear(Long id);
+
     public List<WorkWear> saveAllWorkWear(List<WorkWear> workWearList);
 
-    List<WorkWear> findAllWorkWearByModelWorkWear (String modelWorkWear);
+    List<WorkWear> findAllWorkWearByModelWorkWear(String modelWorkWear);
 
-    List<WorkWear> findAllWorkWearByWorkWearType (WorkWearType workWearType);
+    List<WorkWear> findAllWorkWearByWorkWearType(WorkWearType workWearType);
 
-    List<WorkWear> findAllWorkWearByWorkWearSize (WorkWearSize workWearSize);
+    List<WorkWear> findAllWorkWearByWorkWearSize(WorkWearSize workWearSize);
 }

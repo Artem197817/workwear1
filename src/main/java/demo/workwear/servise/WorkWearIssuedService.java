@@ -1,7 +1,6 @@
 package demo.workwear.servise;
 
 import demo.workwear.model.WorkWearIssued;
-import jakarta.validation.constraints.Max;
 
 import java.util.List;
 
@@ -13,11 +12,11 @@ public interface WorkWearIssuedService {
 
     String saveWorkShoesIssued(WorkWearIssued workWearIssued);
 
-    String updateWorkShoesIssued (WorkWearIssued workWearIssued);
+    String updateWorkShoesIssued(WorkWearIssued workWearIssued);
 
-    void deleteWorkShoesIssued (Long id);
+    void deleteWorkShoesIssued(Long id);
 
-    List<WorkWearIssued> findWorkWearIssuedByEmployeeId (Long id);
+    List<WorkWearIssued> findWorkWearIssuedByEmployeeId(Long id);
 
-    List<WorkWearIssued>  findWorkWearIssuedToBeReplaced ();
+    List<WorkWearIssued> findWorkWearIssuedToBeReplaced();
 }

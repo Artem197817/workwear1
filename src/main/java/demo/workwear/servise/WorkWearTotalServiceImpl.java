@@ -59,12 +59,12 @@ public class WorkWearTotalServiceImpl implements WorkWearTotalService {
         List<WorkWearTotal> workWearTotalList = new ArrayList<>();
         Set<WorkWearType> workWearTypeSet = new HashSet<>();
         List<WorkWear> workWearListFilterType;
-        for (WorkWear workWear: workWearList){
+        for (WorkWear workWear : workWearList) {
             workWearTypeSet.add(workWear.getWorkWearType());
         }
-        for (WorkWearType wearType: workWearTypeSet){
+        for (WorkWearType wearType : workWearTypeSet) {
             workWearListFilterType = workWearList.stream()
-                    .filter(x->wearType.equals(x.getWorkWearType()))
+                    .filter(x -> wearType.equals(x.getWorkWearType()))
                     .sorted(Comparator.comparing(WorkWear::getWorkWearHeight))
                     .toList();
             WorkWearHeight workWearHeight = workWearListFilterType.get(0).getWorkWearHeight();
@@ -88,16 +88,16 @@ public class WorkWearTotalServiceImpl implements WorkWearTotalService {
         List<WorkWear> workWearList = sortedWorkWearNotIssued(workWearService.findAllWorkWear());
         List<WorkWearTotal> workWearTotalList = new ArrayList<>();
         Set<WorkWearType> workWearTypeSet = new HashSet<>();
-        for (WorkWear workWear: workWearList){
+        for (WorkWear workWear : workWearList) {
             workWearTypeSet.add(workWear.getWorkWearType());
         }
-        for (WorkWearType wearType: workWearTypeSet){
+        for (WorkWearType wearType : workWearTypeSet) {
             workWearTotalList.addAll(findWorkWearByTypeSortedNumber(wearType));
         }
         return workWearTotalList;
     }
 
-    private List<WorkWear> sortedWorkWearNotIssued (List<WorkWear> workWearList){
+    private List<WorkWear> sortedWorkWearNotIssued(List<WorkWear> workWearList) {
         return workWearList.stream()
                 .filter(workWear -> workWear.getWorkWearStatus() == WorkWear.NOT_ISSUE)
                 .toList();

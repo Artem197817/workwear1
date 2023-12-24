@@ -9,7 +9,7 @@ public interface WorkShoesService {
 
     List<WorkShoes> findAllWorkShoes();
 
-    WorkShoes saveWorkShoes (WorkShoes workShoes);
+    void saveWorkShoes(WorkShoes workShoes);
 
     WorkShoes findById(Long id);
 

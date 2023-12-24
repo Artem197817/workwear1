@@ -16,6 +16,6 @@ public class WorkWearIssued {
     @Id
     private Long workWearId;
     private LocalDate replacementDate;
-     private LocalDate dateIssued = LocalDate.now();
+    private LocalDate dateIssued = LocalDate.now();
 
 }

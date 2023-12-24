@@ -1,7 +1,6 @@
 package demo.workwear.controller;
 
 import demo.workwear.model.WorkWear;
-import demo.workwear.model.modelEnum.WorkWearHeight;
 import demo.workwear.model.modelEnum.WorkWearSize;
 import demo.workwear.model.modelEnum.WorkWearType;
 import demo.workwear.servise.WorkWearService;

@@ -9,7 +9,7 @@ public interface EmployeeService {
 
     List<Employee> findAllEmployee();
 
-    Employee saveEmployee(Employee employee);
+    void saveEmployee(Employee employee);
 
     Employee findById(Long id);
 
@@ -19,5 +19,5 @@ public interface EmployeeService {
 
     List<Employee> findAllEmployeeByProductionDivision(ProductionDivision productionDivision);
 
-    List<Employee> findAllEmployeeByLastName (String lastName);
+    List<Employee> findAllEmployeeByLastName(String lastName);
 }

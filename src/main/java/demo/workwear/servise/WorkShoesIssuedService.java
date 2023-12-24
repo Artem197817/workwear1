@@ -9,15 +9,15 @@ public interface WorkShoesIssuedService {
 
     List<WorkShoesIssued> findAllWorkShoesIssued();
 
-    WorkShoesIssued saveWorkShoesIssued (WorkShoesIssued workShoesIssued);
+    void saveWorkShoesIssued(WorkShoesIssued workShoesIssued);
 
     WorkShoesIssued findById(Long id);
 
-    WorkShoesIssued updateWorkShoesIssued (WorkShoesIssued workShoesIssued);
+    WorkShoesIssued updateWorkShoesIssued(WorkShoesIssued workShoesIssued);
 
     void deleteWorkShoesIssued(Long id);
 
-    List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID (Long id);
+    List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(Long id);
 
-    List<WorkShoesIssued> findWorkShoesToBeReplaced ();
+    List<WorkShoesIssued> findWorkShoesToBeReplaced();
 }

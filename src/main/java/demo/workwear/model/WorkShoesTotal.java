@@ -11,8 +11,8 @@ import lombok.NoArgsConstructor;
 @Data
 public class WorkShoesTotal {
 
-    private  WorkShoesType workShoesType;
-    private  Integer workShoesSize;
+    private WorkShoesType workShoesType;
+    private Integer workShoesSize;
     private Integer number;
 
 }

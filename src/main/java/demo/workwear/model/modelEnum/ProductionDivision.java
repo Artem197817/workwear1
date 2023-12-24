@@ -43,7 +43,7 @@ public enum ProductionDivision {
         this.value = value;
     }
 
-   public static ProductionDivision getType(String value) {
+    public static ProductionDivision getType(String value) {
         if (value == null) return NONE;
         for (ProductionDivision c : values()) {
             if (c.value.equalsIgnoreCase(value))
@@ -51,8 +51,5 @@ public enum ProductionDivision {
         }
         return NONE;
     }
-/*
-    public String getValue() {
-        return value;
-    }*/
+
 }

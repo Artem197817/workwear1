@@ -8,5 +8,5 @@ import java.util.List;
 
 public interface WorkShoesIssuedRepository extends JpaRepository<WorkShoesIssued,Long> {
 
-    List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID (Long id);
+    List<WorkShoesIssued> findWorkShoesIssuedByEmployeeId (Long id);
 }

@@ -26,9 +26,9 @@ public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
 
     @Override
     @Transactional
-    public WorkShoesIssued saveWorkShoesIssued(WorkShoesIssued workShoesIssued) {
+    public void saveWorkShoesIssued(WorkShoesIssued workShoesIssued) {
         workShoesService.findById(workShoesIssued.getWorkShoes()).setWorkShoesStatus(WorkShoes.ISSUE);
-        return workShoesIssuedRepository.save(workShoesIssued);
+        workShoesIssuedRepository.save(workShoesIssued);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
 
     @Override
     public List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(Long id) {
-        return workShoesIssuedRepository.findWorkShoesIssuedByEmployeeID(id);
+        return workShoesIssuedRepository.findWorkShoesIssuedByEmployeeId(id);
     }
 
     @Override

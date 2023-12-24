@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
-public interface WorkWearIssuedRepository extends JpaRepository<WorkWearIssued,Long> {
+public interface WorkWearIssuedRepository extends JpaRepository<WorkWearIssued, Long> {
 
-    List<WorkWearIssued> findWorkWearIssuedByEmployeeId (Long id);
+    List<WorkWearIssued> findWorkWearIssuedByEmployeeId(Long id);
 }
