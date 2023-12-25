@@ -2,6 +2,8 @@ package demo.workwear.model;
 
 import demo.workwear.model.modelEnum.WorkShoesType;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,6 +22,8 @@ public class WorkShoes {
     private Long id;
     private String modelWorkShoes;
 
+    @Min(34)
+    @Max(48)
     private int workShoesSize;
     private WorkShoesType workShoesType;
 

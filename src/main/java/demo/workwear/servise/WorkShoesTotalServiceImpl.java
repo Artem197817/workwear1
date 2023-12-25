@@ -47,17 +47,21 @@ public class WorkShoesTotalServiceImpl implements WorkShoesTotalService {
         List<WorkShoes> workShoesFilterType = workShoesList.stream()
                 .sorted(Comparator.comparing(WorkShoes::getWorkShoesType))
                 .toList();
-        WorkShoesType workShoesType = workShoesFilterType.get(0).getWorkShoesType();
-        for (WorkShoes workShoes : workShoesFilterType) {
-            if (workShoesType.equals(workShoes.getWorkShoesType())) {
-                number++;
-            } else {
-                workShoesTotals.add(new WorkShoesTotal(workShoesType, workShoesSize, number));
-                workShoesType = workShoes.getWorkShoesType();
-                number = 1;
+        try {
+            WorkShoesType workShoesType = workShoesFilterType.get(0).getWorkShoesType();
+            for (WorkShoes workShoes : workShoesFilterType) {
+                if (workShoesType.equals(workShoes.getWorkShoesType())) {
+                    number++;
+                } else {
+                    workShoesTotals.add(new WorkShoesTotal(workShoesType, workShoesSize, number));
+                    workShoesType = workShoes.getWorkShoesType();
+                    number = 1;
+                }
             }
+            workShoesTotals.add(new WorkShoesTotal(workShoesType, workShoesSize, number));
+        } catch (Exception e){
+            e.printStackTrace();
         }
-        workShoesTotals.add(new WorkShoesTotal(workShoesType, workShoesSize, number));
         return workShoesTotals;
     }
 
