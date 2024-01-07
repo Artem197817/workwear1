@@ -1,7 +1,10 @@
 package demo.workwear.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,10 +15,21 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class WorkWearIssued {
 
-    private Long employeeId;
     @Id
+    @GeneratedValue
+    private Long id;
+    private Long employeeId;
     private Long workWearId;
+    @Transient
+    private Integer monthPeriod;
     private LocalDate replacementDate;
-    private LocalDate dateIssued = LocalDate.now();
+    private LocalDate dateIssued;
 
+
+    public WorkWearIssued(Long employeeId,Long workWearId,Integer monthPeriod){
+        this.employeeId = employeeId;
+        this.workWearId = workWearId;
+        this.replacementDate = LocalDate.now().plusMonths(monthPeriod);
+        this.dateIssued = LocalDate.now();
+    }
 }

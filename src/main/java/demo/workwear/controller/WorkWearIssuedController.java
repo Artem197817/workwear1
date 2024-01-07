@@ -5,12 +5,13 @@ import demo.workwear.servise.WorkWearIssuedService;
 import lombok.Data;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 @RestController
 @RequestMapping("/work_wear_issued")
 @Data
-public abstract class WorkWearIssuedController {
+public class WorkWearIssuedController {
 
     private final WorkWearIssuedService workWearIssuedService;
 
@@ -25,17 +26,18 @@ public abstract class WorkWearIssuedController {
     }
 
     @PostMapping("save_work_wear_issued")
-    public String saveWorkShoesIssued(@PathVariable WorkWearIssued workWearIssued) {
-        return workWearIssuedService.saveWorkShoesIssued(workWearIssued);
+    public String saveWorkWearIssued(@RequestBody WorkWearIssued workWearIssued) {
+        System.out.println(workWearIssued);
+        return workWearIssuedService.saveWorkWearIssued(workWearIssued);
     }
 
     @PutMapping("update_work_wear_issued")
-    public String updateWorkShoesIssued(@PathVariable WorkWearIssued workWearIssued) {
-        return workWearIssuedService.updateWorkShoesIssued(workWearIssued);
+    public String updateWorkWearIssued(@RequestBody WorkWearIssued workWearIssued) {
+        return workWearIssuedService.updateWorkWearIssued(workWearIssued);
     }
 
     @DeleteMapping("delete_work_wear_issued")
-    public void deleteWorkShoesIssued(@PathVariable Long id) {
+    public void deleteWorkWearIssued(@PathVariable Long id) {
         workWearIssuedService.deleteWorkShoesIssued(id);
     }
 

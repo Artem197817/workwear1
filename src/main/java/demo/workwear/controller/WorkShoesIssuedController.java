@@ -20,7 +20,7 @@ public class WorkShoesIssuedController {
     }
 
     @PostMapping("save_work_shoes_issued/{workShoesIssued}")
-    public String saveWorkShoesIssued(@PathVariable WorkShoesIssued workShoesIssued) {
+    public String saveWorkShoesIssued(@RequestBody WorkShoesIssued workShoesIssued) {
         workShoesIssuedService.saveWorkShoesIssued(workShoesIssued);
         return "WorkShoesIssued save";
     }
@@ -31,7 +31,7 @@ public class WorkShoesIssuedController {
     }
 
     @PutMapping("work_shoes_issued_update/{workShoesIssued}")
-    public WorkShoesIssued updateWorkShoesIssued(@PathVariable WorkShoesIssued workShoesIssued) {
+    public WorkShoesIssued updateWorkShoesIssued(@RequestBody WorkShoesIssued workShoesIssued) {
         return null;
     }
 

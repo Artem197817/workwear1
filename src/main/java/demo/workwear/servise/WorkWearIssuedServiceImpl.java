@@ -32,15 +32,17 @@ public class WorkWearIssuedServiceImpl implements WorkWearIssuedService {
 
     @Override
     @Transactional
-    public String saveWorkShoesIssued(WorkWearIssued workWearIssued) {
-        workWearService.findByID(workWearIssued.getWorkWearId()).setWorkWearStatus(WorkWear.ISSUE);
+    public String saveWorkWearIssued(WorkWearIssued workWearIssued) {
+        WorkWear workWear = workWearService.findById(workWearIssued.getWorkWearId());
+        workWear.setWorkWearStatus(WorkWear.ISSUE);
+        workWearService.updateWorkWear(workWear);
         workWearIssuedRepository.save(workWearIssued);
         return "WorkWearIssued save";
     }
 
     @Override
     @Transactional
-    public String updateWorkShoesIssued(WorkWearIssued workWearIssued) {
+    public String updateWorkWearIssued(WorkWearIssued workWearIssued) {
         workWearIssuedRepository.save(workWearIssued);
         return "WorkWearIssued update";
     }

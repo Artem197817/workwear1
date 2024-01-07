@@ -28,7 +28,7 @@ public class WorkWearController {
 
     @GetMapping("/{id}")
     public WorkWear findByID(@PathVariable Long id) {
-        return workWearService.findByID(id);
+        return workWearService.findById(id);
     }
 
     @PutMapping("/update_work_wear")

@@ -10,9 +10,9 @@ public interface WorkWearIssuedService {
 
     WorkWearIssued findWorkWearIssuedById(Long id);
 
-    String saveWorkShoesIssued(WorkWearIssued workWearIssued);
+    String saveWorkWearIssued(WorkWearIssued workWearIssued);
 
-    String updateWorkShoesIssued(WorkWearIssued workWearIssued);
+    String updateWorkWearIssued(WorkWearIssued workWearIssued);
 
     void deleteWorkShoesIssued(Long id);
 

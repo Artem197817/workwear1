@@ -35,7 +35,7 @@ public class WorkWearServiceImpl implements WorkWearService{
         return workWearRepository.saveAll(workWearList);
     }
     @Override
-    public WorkWear findByID(Long id) {
+    public WorkWear findById(Long id) {
         Optional<WorkWear> workWear = workWearRepository.findById(id);
         return workWear.orElse(null);
     }

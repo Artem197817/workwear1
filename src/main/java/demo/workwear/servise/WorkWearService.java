@@ -12,7 +12,7 @@ public interface WorkWearService {
 
     void saveWorkWear(WorkWear workWear);
 
-    WorkWear findByID(Long id);
+    WorkWear findById(Long id);
 
     WorkWear updateWorkWear(WorkWear workWear);
 
