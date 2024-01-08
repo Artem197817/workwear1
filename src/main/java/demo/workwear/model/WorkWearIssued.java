@@ -32,4 +32,15 @@ public class WorkWearIssued {
         this.replacementDate = LocalDate.now().plusMonths(monthPeriod);
         this.dateIssued = LocalDate.now();
     }
+
+    @Override
+    public String toString() {
+        return "WorkWearIssued{" +
+                "id - " + id +
+                ", id сотрудника - " + employeeId +
+                ", id выданной сотруднику спецодежды - " + workWearId +
+                ", Дата замены - " + replacementDate +
+                ", Дата выдачи - " + dateIssued +
+                '}';
+    }
 }

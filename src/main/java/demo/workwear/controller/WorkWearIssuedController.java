@@ -36,12 +36,12 @@ public class WorkWearIssuedController {
         return workWearIssuedService.updateWorkWearIssued(workWearIssued);
     }
 
-    @DeleteMapping("delete_work_wear_issued")
+    @DeleteMapping("delete_work_wear_issued/{id}")
     public void deleteWorkWearIssued(@PathVariable Long id) {
-        workWearIssuedService.deleteWorkShoesIssued(id);
+        workWearIssuedService.deleteWorkWearIssuedById(id);
     }
 
-    @GetMapping("work_wear_issued_by_employee_id")
+    @GetMapping("work_wear_issued_by_employee_id/{id}")
     public List<WorkWearIssued> findWorkWearIssuedByEmployeeId(@PathVariable Long id) {
         return workWearIssuedService.findWorkWearIssuedByEmployeeId(id);
     }

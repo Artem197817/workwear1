@@ -48,7 +48,7 @@ public class WorkWearServiceImpl implements WorkWearService{
 
     @Override
     @Transactional
-    public void deleteWorkWear(Long id) {
+    public void deleteWorkWearById(Long id) {
         workWearRepository.deleteById(id);
     }
 

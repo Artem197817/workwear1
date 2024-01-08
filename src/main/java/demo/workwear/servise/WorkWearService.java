@@ -16,7 +16,7 @@ public interface WorkWearService {
 
     WorkWear updateWorkWear(WorkWear workWear);
 
-    void deleteWorkWear(Long id);
+    void deleteWorkWearById(Long id);
 
     public List<WorkWear> saveAllWorkWear(List<WorkWear> workWearList);
 

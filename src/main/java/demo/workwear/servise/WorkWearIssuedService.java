@@ -14,7 +14,7 @@ public interface WorkWearIssuedService {
 
     String updateWorkWearIssued(WorkWearIssued workWearIssued);
 
-    void deleteWorkShoesIssued(Long id);
+    void deleteWorkWearIssuedById(Long id);
 
     List<WorkWearIssued> findWorkWearIssuedByEmployeeId(Long id);
 

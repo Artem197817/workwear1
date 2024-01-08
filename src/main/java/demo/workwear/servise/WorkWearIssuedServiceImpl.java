@@ -48,7 +48,9 @@ public class WorkWearIssuedServiceImpl implements WorkWearIssuedService {
     }
 
     @Override
-    public void deleteWorkShoesIssued(Long id) {
+    @Transactional
+    public void deleteWorkWearIssuedById(Long id) {
+        workWearService.deleteWorkWearById(findWorkWearIssuedById(id).getWorkWearId());
         workWearIssuedRepository.deleteById(id);
     }
 

@@ -38,7 +38,7 @@ public class WorkWearController {
 
     @DeleteMapping("/delete_work_wear/{id}")
     public void deleteWorkWear(@PathVariable Long id) {
-        workWearService.deleteWorkWear(id);
+        workWearService.deleteWorkWearById(id);
     }
 
     @PostMapping("save_all_wear")
