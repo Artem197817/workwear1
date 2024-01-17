@@ -9,7 +9,7 @@ public interface WorkShoesIssuedService {
 
     List<WorkShoesIssued> findAllWorkShoesIssued();
 
-    void saveWorkShoesIssued(WorkShoesIssued workShoesIssued);
+    String saveWorkShoesIssued(WorkShoesIssued workShoesIssued);
 
     WorkShoesIssued findById(Long id);
 
@@ -17,7 +17,7 @@ public interface WorkShoesIssuedService {
 
     void deleteWorkShoesIssued(Long id);
 
-    List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(Long id);
+    List<WorkShoesIssued> findWorkShoesIssuedByEmployeeId(Long id);
 
     List<WorkShoesIssued> findWorkShoesToBeReplaced();
 }

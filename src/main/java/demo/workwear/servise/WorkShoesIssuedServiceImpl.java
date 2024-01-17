@@ -18,7 +18,7 @@ public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
 
     private final WorkShoesIssuedRepository workShoesIssuedRepository;
     private final WorkShoesService workShoesService;
-
+    
     @Override
     public List<WorkShoesIssued> findAllWorkShoesIssued() {
         return workShoesIssuedRepository.findAll();
@@ -26,9 +26,12 @@ public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
 
     @Override
     @Transactional
-    public void saveWorkShoesIssued(WorkShoesIssued workShoesIssued) {
-        workShoesService.findById(workShoesIssued.getWorkShoes()).setWorkShoesStatus(WorkShoes.ISSUE);
+    public String saveWorkShoesIssued(WorkShoesIssued workShoesIssued) {
+        WorkShoes workShoes = workShoesService.findById((workShoesIssued.getWorkShoesId()));
+        workShoes.setWorkShoesStatus(WorkShoes.ISSUE);
+        workShoesService.updateWorkShoes(workShoes);
         workShoesIssuedRepository.save(workShoesIssued);
+        return "WorkShoesIssued save";
     }
 
     @Override
@@ -44,13 +47,14 @@ public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
     }
 
     @Override
+    @Transactional
     public void deleteWorkShoesIssued(Long id) {
-        workShoesService.deleteWorkShoes(workShoesService.findById(id).getId());
+        workShoesService.deleteWorkShoes(findById(id).getWorkShoesId());
         workShoesIssuedRepository.deleteById(id);
     }
 
     @Override
-    public List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(Long id) {
+    public List<WorkShoesIssued> findWorkShoesIssuedByEmployeeId(Long id) {
         return workShoesIssuedRepository.findWorkShoesIssuedByEmployeeId(id);
     }
 
@@ -62,3 +66,4 @@ public class WorkShoesIssuedServiceImpl implements WorkShoesIssuedService {
                 .toList();
     }
 }
+

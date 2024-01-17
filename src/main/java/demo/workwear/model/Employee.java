@@ -33,4 +33,14 @@ public class Employee {
     @NotBlank
     private String specialization;
 
+    @Override
+    public String toString() {
+        return "id=" + id + "." +
+                " " + lastName + '\'' +
+                " " + firstName + '\'' +
+                " " + patronymic + '\'' +
+                " участок " + productionDivision.getValue() +
+                " компания " + company.getValue() +
+                " специальность'" + specialization + '\'';
+    }
 }

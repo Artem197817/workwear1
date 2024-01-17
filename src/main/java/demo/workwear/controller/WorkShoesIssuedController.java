@@ -19,7 +19,7 @@ public class WorkShoesIssuedController {
         return workShoesIssuedService.findAllWorkShoesIssued();
     }
 
-    @PostMapping("save_work_shoes_issued/{workShoesIssued}")
+    @PostMapping("save_work_shoes_issued")
     public String saveWorkShoesIssued(@RequestBody WorkShoesIssued workShoesIssued) {
         workShoesIssuedService.saveWorkShoesIssued(workShoesIssued);
         return "WorkShoesIssued save";
@@ -42,7 +42,7 @@ public class WorkShoesIssuedController {
 
     @GetMapping("work_shoes_issued_by_id_employee/{id}")
     public List<WorkShoesIssued> findWorkShoesIssuedByEmployeeID(@PathVariable Long id) {
-        return workShoesIssuedService.findWorkShoesIssuedByEmployeeID(id);
+        return workShoesIssuedService.findWorkShoesIssuedByEmployeeId(id);
     }
 
     @GetMapping("work_shoes_to_be_replaced")
