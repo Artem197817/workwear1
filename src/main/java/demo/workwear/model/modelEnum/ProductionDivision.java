@@ -51,5 +51,13 @@ public enum ProductionDivision {
         }
         return NONE;
     }
+    public static String[] getTypeArray() {
 
+        String[] valuesShoes = new String[values().length];
+        int i = 0;
+        for (ProductionDivision w : values()) {
+            valuesShoes[i++] = w.getValue();
+        }
+        return valuesShoes;
+    }
 }

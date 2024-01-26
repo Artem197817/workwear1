@@ -32,4 +32,5 @@ public class WorkShoesTotalController {
     public List<WorkShoesTotal> findAllWorkShoesSortedNumber() {
         return workShoesTotalService.findAllWorkShoesSortedNumber();
     }
+
 }

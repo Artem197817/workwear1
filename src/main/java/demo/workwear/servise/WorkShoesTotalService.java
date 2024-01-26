@@ -14,4 +14,5 @@ public interface WorkShoesTotalService {
     List<WorkShoesTotal> findWorkShoesBySizeSortedNumber(Integer size);
 
     List<WorkShoesTotal> findAllWorkShoesSortedNumber();
+
 }

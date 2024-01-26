@@ -50,8 +50,12 @@ public class WorkWearIssuedServiceImpl implements WorkWearIssuedService {
     @Override
     @Transactional
     public void deleteWorkWearIssuedById(Long id) {
-        workWearService.deleteWorkWearById(findWorkWearIssuedById(id).getWorkWearId());
-        workWearIssuedRepository.deleteById(id);
+        try {
+            workWearService.deleteWorkWearById(findWorkWearIssuedById(id).getWorkWearId());
+            workWearIssuedRepository.deleteById(id);
+        }catch (Exception e){
+            System.out.println("Error id");
+        }
     }
 
     @Override

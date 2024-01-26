@@ -33,6 +33,15 @@ public class Employee {
     @NotBlank
     private String specialization;
 
+    public Employee(String firstName, String lastName, String patronymic, ProductionDivision productionDivision, Company company, String specialization) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.patronymic = patronymic;
+        this.productionDivision = productionDivision;
+        this.company = company;
+        this.specialization = specialization;
+    }
+
     @Override
     public String toString() {
         return "id=" + id + "." +

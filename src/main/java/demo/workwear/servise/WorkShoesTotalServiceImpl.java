@@ -59,7 +59,7 @@ public class WorkShoesTotalServiceImpl implements WorkShoesTotalService {
                 }
             }
             workShoesTotals.add(new WorkShoesTotal(workShoesType, workShoesSize, number));
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return workShoesTotals;
